@@ -6,4 +6,4 @@
 // @run-at       document-end
 // ==/UserScript==
 
-document.querySelector('meta[name="theme-color"]').remove()
+document.querySelector('meta[name="theme-color"]').content='#fff'
