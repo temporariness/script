@@ -27,7 +27,7 @@
     var oReq = new XMLHttpRequest();
     oReq.timeout = opt.timeout || 5000;
     if (opt.onload) {
-      oReq.addEventListener("load", opt.onload);
+      oReq.addEventListener("load", opt.onload(oReq));
     }
     oReq.open(opt.method, opt.url);
     oReq.send();
