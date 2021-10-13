@@ -279,7 +279,7 @@
   curSite.pageUrl = ""; // 下一页URL
   if (menu_value("menu_linksBlank")) linksBlank(); //               新标签页打开链接
   if (menu_value("menu_fish")) fish(); //                           标签页伪装为 Github（摸鱼）
-  if (menu_value("menu_autoClockIn")) setTimeout(qianDao, 1000); // 自动签到（后台），延迟 1 秒执行是为了兼容 [V2ex Plus] 扩展
+  if (menu_value("menu_autoClockIn")) setTimeout(qianDao, 100); // 自动签到（后台），延迟 1 秒执行是为了兼容 [V2ex Plus] 扩展
   if (menu_value("menu_pageLoading")) pageLoading(); //             自动翻页（无缝）
   if (menu_value("menu_backToTop")) backToTop(); //                 回到顶部（右键点击左右两侧空白处）
   if (menu_value("menu_linksToImgs")) linksToImgs(); //             链接转图片
@@ -326,7 +326,7 @@
       location.origin +
       "/mission/daily/redeem?" +
       RegExp("once\\=(\\d+)").exec(
-        document.querySelector("div#Top .tools").innerHTML
+        (document.querySelector("div#menu-body") || document.querySelector("div#Top .tools")).innerHTML
       )[0];
     GM_xmlhttpRequest({
       url: url,
