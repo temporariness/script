@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         baidu
-// @description  baidu
-// @match        *://exhentai.com/*
-// @match        *://*.exhentai.com/*
+// @name         exhentai
+// @description  exhentai
+// @match        *://exhentai.org/*
+// @match        *://*.exhentai.org/*
 // @run-at       document-end
 // ==/UserScript==
 
