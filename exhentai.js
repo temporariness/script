@@ -1,3 +1,10 @@
+// ==UserScript==
+// @name         baidu
+// @description  baidu
+// @match        *://exhentai.com/*
+// @match        *://*.exhentai.com/*
+// @run-at       document-end
+// ==/UserScript==
 
 ;(function () {
   var s = document.createElement("script");
