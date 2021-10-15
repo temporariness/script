@@ -22,7 +22,7 @@
 
 (function () {
   "use strict";
-
+  document.querySelector('img.avatar').style.boxShadow = '0 0 5px #333';
   const GM_xmlhttpRequest = (opt) => {
     var oReq = new XMLHttpRequest();
     oReq.timeout = opt.timeout || 5000;
@@ -59,7 +59,7 @@
       ["menu_pageLoading_reply", "帖子内自动翻页", "帖子内自动翻页", false],
       ["menu_backToTop", "回到顶部（右键点击两侧空白处）", "回到顶部", true],
       ["menu_quickReply", "快速回复（左键双击两侧空白处）", "快速回复", true],
-      ["menu_linksBlank", "新标签页打开链接", "新标签页打开链接", true],
+      ["menu_linksBlank", "新标签页打开链接", "新标签页打开链接", false],
       [
         "menu_fish",
         "标签页伪装为 Github（摸鱼）",
@@ -279,7 +279,7 @@
   curSite.pageUrl = ""; // 下一页URL
   if (menu_value("menu_linksBlank")) linksBlank(); //               新标签页打开链接
   if (menu_value("menu_fish")) fish(); //                           标签页伪装为 Github（摸鱼）
-  if (menu_value("menu_autoClockIn")) setTimeout(qianDao, 100); // 自动签到（后台），延迟 1 秒执行是为了兼容 [V2ex Plus] 扩展
+  if (menu_value("menu_autoClockIn")) qianDao(); // 自动签到（后台），延迟 1 秒执行是为了兼容 [V2ex Plus] 扩展
   if (menu_value("menu_pageLoading")) pageLoading(); //             自动翻页（无缝）
   if (menu_value("menu_backToTop")) backToTop(); //                 回到顶部（右键点击左右两侧空白处）
   if (menu_value("menu_linksToImgs")) linksToImgs(); //             链接转图片
