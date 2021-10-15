@@ -22,7 +22,10 @@
 
 (function () {
   "use strict";
-  document.querySelector('img.avatar').style.boxShadow = '0 0 5px #333';
+  try{
+    document.querySelector('img.avatar').style.transition = "box-shadow 0.3s";
+    document.querySelector('img.avatar').style.boxShadow = '0 0 5px #333';
+  }catch(e){}
   const GM_xmlhttpRequest = (opt) => {
     var oReq = new XMLHttpRequest();
     oReq.timeout = opt.timeout || 5000;
