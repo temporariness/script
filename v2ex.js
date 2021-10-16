@@ -27,9 +27,15 @@
       const a = document.createElement("a");
       a.href = v.href.replace("/t/", "/amp/t/");
       a.innerText = "AMP";
-      a.className = "count_livid";
-      v.parentNode.parentNode.lastElementChild.prepend(' • ');
-      v.parentNode.parentNode.lastElementChild.prepend(a);
+      a.className = "node";
+      const pNode = v.parentNode.parentNode
+      if(pNode.childElementCount > 3) {
+        pNode.firstElementChild.append(' • ');
+        pNode.firstElementChild.append(a);
+      } else {
+        pNode.lastElementChild.append(' • ');
+        pNode.lastElementChild.append(a);
+      }
     });
   }catch(e){}
   const GM_xmlhttpRequest = (opt) => {
