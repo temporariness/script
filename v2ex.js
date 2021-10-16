@@ -23,8 +23,14 @@
 (function () {
   "use strict";
   try{
-    document.querySelector('img.avatar').style.transition = "box-shadow 0.3s";
-    document.querySelector('img.avatar').style.boxShadow = '0 0 5px #333';
+    document.querySelectorAll(".topic-link").forEach((v) => {
+      const a = document.createElement("a");
+      a.href = v.href.replace("/t/", "/amp/t/");
+      a.innerText = "AMP";
+      a.className = "count_livid";
+      v.parentNode.parentNode.lastElementChild.prepend(' • ');
+      v.parentNode.parentNode.lastElementChild.prepend(a);
+    });
   }catch(e){}
   const GM_xmlhttpRequest = (opt) => {
     var oReq = new XMLHttpRequest();
