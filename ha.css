@@ -1,0 +1,4 @@
+
+.mdc-dialog .mdc-dialog__content{
+-webkit-backdrop-filter: blur(5px);
+}
